@@ -23,8 +23,12 @@ class ProductController extends Controller
         $products = Product::paginate($perPage, ["*"], "page", $currentPage);
         $response = new APIPaginateCollection($products, ProductResource::class);
         return response()->json($response);
+        // return response()->json([
+        //     'success'=>true,
+        //     'message'=>'ok'
+        // ]);
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
